@@ -10,6 +10,7 @@ API: http://localhost:8080/swagger-ui/index.html#
 4. Order 100 cars in at least 3 different colors
 5. Check that the car price is at least 1000 EUR
 6. Create a car order via BDD and verify the attributes
+7. Cover 2 negative car order scenarios (via BDD)
 
 ### Reference Documentation
 For further reference, please consider the following sections:
