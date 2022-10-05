@@ -7,7 +7,7 @@ API: http://localhost:8080/swagger-ui/index.html#
 1. Find the bug in the HelloWorld test
 2. Extend the tests for the calculator to cover all operations
 3. Find the error in the calculator
-4. Order 100 cars
+4. Order 100 cars in at least 3 different colors
 5. Check that the car price is at least 1000 EUR
 6. Create a car order via BDD and verify the attributes
 
