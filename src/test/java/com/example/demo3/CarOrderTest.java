@@ -26,16 +26,18 @@ public class CarOrderTest {
         carOrder.setManufacturer("DACIA");
         carOrder.setColor("blue");
 
-        this.webTestClient
-                .post()
-                .uri("/api/cars/orders")
-                .body(Mono.just(carOrder), CarOrder.class)
-                .exchange()
-                .expectStatus().is2xxSuccessful() // check status code
-                .expectBody(Car.class)
-                .consumeWith(result ->
-                        Assertions.assertNotNull(result.getResponseBody().getSerialNumber())
-                );
+        for (int i = 0; i < 100; i++) {
+            this.webTestClient
+                    .post()
+                    .uri("/api/cars/orders")
+                    .body(Mono.just(carOrder), CarOrder.class)
+                    .exchange()
+                    .expectStatus().is2xxSuccessful() // check status code
+                    .expectBody(Car.class)
+                    .consumeWith(result ->
+                            Assertions.assertNotNull(result.getResponseBody().getSerialNumber())
+                    );
+        }
 
     }
 }
