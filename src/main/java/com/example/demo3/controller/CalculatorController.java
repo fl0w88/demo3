@@ -21,7 +21,7 @@ public class CalculatorController {
             r = calc.add(calculationRequest.getNumber1(), calculationRequest.getNumber2());
         }
         if (calculationRequest.getOperation().trim().equals("-")) {
-            r = calc.add(calculationRequest.getNumber1(), calculationRequest.getNumber2());
+            r = calc.subtract(calculationRequest.getNumber1(), calculationRequest.getNumber2());
         }
         if (calculationRequest.getOperation().trim().equals("*")) {
             r = calc.multiply(calculationRequest.getNumber1(), calculationRequest.getNumber2());
@@ -30,7 +30,7 @@ public class CalculatorController {
             r = calc.divide(calculationRequest.getNumber1(), calculationRequest.getNumber2());
         }
         if (r == null) {
-            return ResponseEntity.status(HttpStatus.BAD_GATEWAY).build();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
         return ResponseEntity.ok(new CalculationResponse(r));
     }
