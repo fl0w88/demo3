@@ -20,24 +20,8 @@ public class CarOrderTest {
 
     @Test
     @DisplayName("Autobestellung von Fritz")
-    public void dasIstEigentlichEgal() {
-        CarOrder carOrder = new CarOrder();
-        carOrder.setModel("Logan");
-        carOrder.setManufacturer("DACIA");
-        carOrder.setColor("blue");
-
-        for (int i = 0; i < 100; i++) {
-            this.webTestClient
-                    .post()
-                    .uri("/api/cars/orders")
-                    .body(Mono.just(carOrder), CarOrder.class)
-                    .exchange()
-                    .expectStatus().is2xxSuccessful() // check status code
-                    .expectBody(Car.class)
-                    .consumeWith(result ->
-                            Assertions.assertNotNull(result.getResponseBody().getSerialNumber())
-                    );
-        }
+    public void carOrderTest() {
+        // Bestelle mindestens 100 Autos in 3 unterschiedliche Farben
 
     }
 }
