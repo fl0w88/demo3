@@ -17,7 +17,6 @@ public class CarFactory {
     public static Car buildCar(String manufacturer, String model, String color) throws InvalidPropertiesFormatException {
         String serialNumber = UUID.randomUUID().toString();
         Car car = new Car();
-        car.setSerialNumber(serialNumber);
         LOGGER.debug("New car created with serial number: {}.", car.getSerialNumber());
         if (availableManufacturers.contains(manufacturer)) {
             car.setManufacturer(manufacturer);

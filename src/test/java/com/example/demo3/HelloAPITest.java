@@ -18,7 +18,7 @@ class HelloAPITest {
 	void helloTest() {
 		this.webTestClient
 				.get()
-				.uri("/api/hello")
+				.uri("/hello")
 				.exchange()
 				.expectStatus().is2xxSuccessful();
 	}

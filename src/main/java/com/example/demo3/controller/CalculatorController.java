@@ -21,7 +21,7 @@ public class CalculatorController {
             r = calc.add(calculationRequest.getNumber1(), calculationRequest.getNumber2());
         }
         if (calculationRequest.getOperation().trim().equals("-")) {
-            r = calc.subtract(calculationRequest.getNumber1(), calculationRequest.getNumber2());
+            r = calc.add(calculationRequest.getNumber1(), calculationRequest.getNumber2());
         }
         if (calculationRequest.getOperation().trim().equals("*")) {
             r = calc.multiply(calculationRequest.getNumber1(), calculationRequest.getNumber2());
